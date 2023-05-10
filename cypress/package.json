@@ -1,0 +1,14 @@
+{
+    "name": "tesla",
+    "version": "1.0.0",
+    "description": "Cypress tests of tesla website",
+    "main": "index.js",
+    "scripts": {
+      "cypress:open": "cypress open"
+    },
+    "author": "Mateusz Kowalczyk",
+    "license": "ISC",
+    "devDependencies": {
+      "cypress": "12.8.0"
+    }
+  }
