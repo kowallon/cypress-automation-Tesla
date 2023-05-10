@@ -39,7 +39,7 @@ describe('E2E test', () => {
               .clickElementWithText(common.homePageNavEl, 'Model S')
               .clickElementWithText('span', 'Demo Drive')
             demoDrivePage
-              .checkIfCorrectModelIsSelected('ModelY')//Here should be MoselS, but it's a bug on Tesla's website :)
+              .checkIfCorrectModelIsSelected('Model3')//Here should be ModelS, but it's a bug on Tesla's website :)
           })
   })
 
