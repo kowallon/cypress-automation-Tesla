@@ -13,33 +13,24 @@ mainConetnet = '#main-content'
 
 
 //Methods
-
+//To be finished
     login(user, password){
-
-        cy.visit('https://www.tesla.com/')
-        .get('.tds-site-nav-item-text').contains('Account').click()
-        .wait(1000)
-        //cy.visit(this.loginPage)
-        .wait(1000)
-        .get(this.emailInput).type(user)
-        .wait(1000)
-        .get(this.loginPageBtn).click()
-        .wait(1000)
-        .get(this.passwordInput).type(password)
-        .wait(1000)
-
-        cy.intercept({
+        cy.request({
             method: 'GET',
-            url: '**/teslaaccount/oxp-bff-api/user-orders',
-            times: 1
-        }).as('userOrders')
-
-        cy.get(this.loginPageBtn).click()   
-
-        cy.wait('@userOrders').its('response.statusCode').should('eq', 200);
-
-        cy.get(this.mainConetnet).children().invoke('text').should('eq', 'Dashboard')
-
+            url: 'https://auth.tesla.com/oauth2/v3/authorize',
+            qs: {
+              client_id: 'ownerapi',
+              code_challenge: '123',
+              code_challenge_method: 'S256',
+              redirect_uri: 'https://auth.tesla.com/void/callback',
+              response_type: 'code',
+              scope: 'openid email offline_access',
+              state: '123',
+              login_hint: user
+            }
+          }).then((response) => {
+            expect(response.status).to.eq(200);
+          });
     }
 
 
