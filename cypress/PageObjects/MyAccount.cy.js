@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 import { DemoDrivePage} from "../PageObjects/DemoDrivePage.cy"
 
 export class MyAccount extends DemoDrivePage{
