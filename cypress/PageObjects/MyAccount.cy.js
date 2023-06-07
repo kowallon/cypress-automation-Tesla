@@ -29,6 +29,7 @@ mainConetnet = '#main-content'
               login_hint: user
             }
           }).then((response) => {
+            cy.log(response)
             expect(response.status).to.eq(200);
           });
     }
