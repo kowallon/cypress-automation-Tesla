@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+
 
 import { common } from "../PageObjects/Common.cy"
 import { demoDrivePage} from "../PageObjects/DemoDrivePage.cy"
@@ -48,7 +48,7 @@ describe('E2E test', () => {
   describe('Check demo drive feature for logged user', () => {
 
   //This won't work because of authentication issues, but I wanted to keep the method
-    it.only('Book demo drive for Tesla S', () => {
+    it('Book demo drive for Tesla S', () => {
              myAccount
               .login(loginData.loginData.user, loginData.loginData.password)
     })

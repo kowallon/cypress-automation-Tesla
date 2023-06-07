@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 import { Common } from "./Common.cy"
 
 
@@ -15,7 +13,7 @@ zipCode = '#edit-zipcode-td'
 submitBtn = '#edit-submit-td-ajax0'
 locationPicker = '#select-location'
 calendar = '#select-day'
-dayPicker = '.tds-day:not([disabled])'
+dayPicker = '.tds-day:not([disabled])[type="button"]'
 timePicker = '#select-time'
 submitDemoDrive = '[data-section=timeSection]'
 selectedTeslaModel = '.selectedButton'
@@ -40,6 +38,7 @@ selectedTeslaModel = '.selectedButton'
         cy.get(this.selectedTeslaModel).should('have.attr', 'data-model', model)
         return this;
     }
+
 }
 
 export const demoDrivePage = new DemoDrivePage();

@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+
 
 export class Common {
 
@@ -25,7 +25,7 @@ export class Common {
         }
     
         clickAnyElementWithForce(selector ){
-            cy.get(selector).getAny().click();
+            cy.get(selector).getAny().click({force: true});
             return this;
         }
     
